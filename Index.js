@@ -15,6 +15,8 @@ app.get('/' , (req, res)=>{
 app.get('/news-categories', (req, res)=>{
     res.send(categories);
 })
+
+// category news and dynamic id
 app.get('/category/:id', (req, res)=>{
     const id = req.params.id;
     if(id === '08'){
@@ -25,7 +27,10 @@ app.get('/category/:id', (req, res)=>{
         res.send(category_news);
     }
 })
-
+// news-----
+app.get('/news', (req, res)=>{
+    res.send(news);
+})
 app.get('/news/:id', (req, res)=>{
     const id = req.params.id;
     const selectNews = news.find(n=> n._id === id);
